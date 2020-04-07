@@ -1,0 +1,6 @@
+{
+	"host": "Put here your MySQL server hostname or IP address",
+	"user": "Put here the username you use for accessing your MySQL database",
+	"pass": "Put here the password you use for accessing your MySQL database",
+	"dbnm": "Put here the database name"
+}

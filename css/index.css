@@ -1,0 +1,308 @@
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ *	
+ * *************************************************************
+ * *************************************************************
+ * This page is the result of a heavy rework that Mirco Soderi
+ * (see https://www.linkedin.com/in/mirco-soderi-3b470525/, 
+ * contact at mirco.soderi@gmail.com) has operated for the 
+ * purposes of the Crowded Zone project, moving from the sample 	
+ * index.css produced while getting started with Cordova, 
+ * (see https://cordova.apache.org/#getstarted). 
+ * *************************************************************
+ * *************************************************************
+ */
+ 
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+}
+
+body {
+    -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
+    /*background-color:#E4E4E4;*/
+	background-color: black;
+    /* background-image:linear-gradient(top, #A7A7A7 0%, #E4E4E4 51%); */
+    font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
+    font-size:12px;
+    height:100vh;
+    margin:0px;
+    padding:0px;
+    /* Padding to avoid the "unsafe" areas behind notches in the screen */
+    padding: env(safe-area-inset-top, 0px) env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px) env(safe-area-inset-right, 0px);
+    text-transform:uppercase;
+    width:100%;
+	cursor:pointer;
+}
+
+/* Portrait layout (default) */
+.app {
+    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
+    position:absolute;             /* position in the center of the screen */
+    left:50%;
+    top:50%;
+    height:50px;                   /* text area height */
+    width:225px;                   /* text area width */
+    text-align:center;
+    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
+    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
+                                   /* offset horizontal: half of text area width */
+}
+
+/* Landscape layout (with min-width) */
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+h1 {
+    font-size:24px;
+    font-weight:normal;
+    margin:0px;
+    overflow:visible;
+    padding:0px;
+    text-align:center;
+}
+
+.event {
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    color:#FFFFFF;
+    font-size:12px;
+    margin:0px 30px;
+    padding:2px 0px;
+}
+
+.event.listening {
+    background-color:#333333;
+    display:block;
+}
+
+.event.received {
+    background-color:#4B946A;
+    display:none;
+}
+
+@keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+@-webkit-keyframes fade {
+    from { opacity: 1.0; }
+    50% { opacity: 0.4; }
+    to { opacity: 1.0; }
+}
+ 
+.blink {
+    animation:fade 3000ms infinite;
+    -webkit-animation:fade 3000ms infinite;
+}
+
+/* Customization starts here */
+
+.map {
+  height:90%;
+  width: 100%;
+}
+
+p.element,p.missing {
+	border: thin solid black;
+	background-color: white;
+	padding: 1em;
+	font-family: sans-serif;
+	margin: 0px;	
+	cursor:pointer;
+}
+
+p.element:hover {
+	color: white;
+	background-color:black;
+}
+
+div#footer {
+	background-color:black; 
+	color:white;
+	height:10%;
+	font-size:xx-large;
+}
+
+div#footer table {
+	height:100%;
+	width:100%;
+	border-collapse:collapse;
+}
+
+div#footer table td {
+	vertical-align:middle;
+	border: medium solid white;
+	text-align: middle;
+	width:20%;
+	text-align:center;
+	background-color:black;
+	color:white;
+}
+
+div#footer a {
+	text-decoration:none;
+	color:white;
+}
+
+div#footer td a {
+	width:100%;
+	height:100%;
+	display:block;
+	padding-top:0.2em;
+}
+
+div#footer td:hover {
+	background-color:white;
+	color:black;
+}
+
+div#footer td:hover a {
+	color:black;
+}
+
+div#intro {
+	text-transform:none;	
+	background-color: white;
+	height:87%;
+	max-height:87%;
+	overflow:auto;
+	padding:1%;
+	cursor:default;
+}
+
+div#intro h1 {
+	font-weight:bold;
+}
+
+div#intro p {
+	font-size:large;
+	text-align:center;
+}
+
+div#intro a {
+	text-decoration:none;
+	font-weight:bold;
+}
+
+div#container {
+	width:85%; 
+	height:85%; 
+	max-width:85%; 
+	max-height:85%; 
+	min-width:85%; 
+	min-height:85%; 
+	position: absolute; 
+	top:0px; 
+	bottom: 0px; 
+	left: 0px; 
+	right: 0px; 
+	margin: auto;
+}
+
+div.favIcon {
+	z-index: 10000;
+	position: absolute;
+	left: 40px; 
+	top: 8px; 	
+	border-radius:4px;
+	font-size:20px;
+	background-color: rgba(0,0,0,0.8);
+	padding:8px;
+	padding-top:6px;
+	color:white;
+	font-family:monospace;
+}
+
+div.favIcon span#favTitle {
+	font-weight:bold;
+	color: #ffc83d;
+	padding-left:8px;
+	font-size: 26px;
+}
+
+div.favIcon p.favPlace:hover {
+	color: #ffc83d;
+}
+
+#canvas {
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+  height:90%;
+  width: 100%;
+  background-color:white;
+}
+
+div.closeChart {
+	position: absolute;
+	top: 0px;
+	width: 50px;
+	height: 50px;
+	z-index: 2000000;
+	font-size: x-large;
+}
+
+div.infIcon {
+	z-index: 10000;
+	position: absolute;
+	left: 94px; 
+	top: 8px; 	
+	border-radius:4px;
+	background-color: rgba(0,0,0,0.8);
+	padding:6px;
+	font-family:monospace;
+	border: thin solid black;
+	text-align:center;
+	font-size:20px;
+	color: white;
+}
+
+div.infIcon span#infTitle {
+	font-weight:bold;
+	color: #ffc83d;
+	padding-left:8px;	
+	font-size: 22px;
+	width:100%;
+	text-align:center;
+}
+
+div.idDiv {
+	z-index: 10000;
+	position: absolute;
+	left: 8px;
+	top: 55px;
+	background-color:white;
+	opacity:0.4;
+	padding:4px;
+	transform: rotate(-90deg);
+	border-radius:4px;
+}
+
+div.infIcon p.infDate:hover {
+	color: #ffc83d;
+}
