@@ -68,6 +68,9 @@ try {
 			$newuserid = mysqli_insert_id($link); 
 			echo($newuserid);
 			try {								
+				$stmtclean = mysqli_prepare($link, "DELETE FROM contacts WHERE upd < ?");
+				mysqli_stmt_bind_param($stmtclean, 'i', strtotime("-14 days"));
+				mysqli_stmt_execute($stmtclean);				
 				$stmtc = mysqli_prepare($link, "INSERT INTO contacts(a,b,oid,lat,lon,timestamp) select ?, id, oid, ?, ?, UNIX_TIMESTAMP() FROM realtime WHERE oid = ? and upd > ? and id <> ? ");
 				mysqli_stmt_bind_param($stmtc, 'iiisii', $newuserid, $_POST["lat"], $_POST["lon"], $_POST["oid"], strtotime("-24 hours"), $newuserid);
 				mysqli_stmt_execute($stmtc);				
@@ -138,6 +141,9 @@ try {
 		mysqli_stmt_bind_param($stmt, 'iisi', $_POST["lat"], $_POST["lon"], $_POST["oid"], $_POST["id"]);
 		if(mysqli_stmt_execute($stmt)) {
 			echo($_POST["id"]);					
+			$stmtclean = mysqli_prepare($link, "DELETE FROM contacts WHERE upd < ?");
+			mysqli_stmt_bind_param($stmtclean, 'i', strtotime("-14 days"));
+			mysqli_stmt_execute($stmtclean);	
 			$stmtc = mysqli_prepare($link, "INSERT INTO contacts(a,b,oid,lat,lon,timestamp) select ?, id, oid, ?, ?, UNIX_TIMESTAMP() FROM realtime WHERE oid = ? and upd > ? and id <> ?");
 			mysqli_stmt_bind_param($stmtc, 'iiisii', $_POST["id"], $_POST["lat"], $_POST["lon"], $_POST["oid"], strtotime("-24 hours"), $_POST["id"]);			
 			mysqli_stmt_execute($stmtc);
