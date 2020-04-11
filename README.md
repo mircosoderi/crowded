@@ -1,14 +1,14 @@
 # crowded
-_To know how many people are in one place at now, how many have been there in the past, and if one have met infected people._
+_To know how many people are in one place at now and how many have been there in the past. It also could help counter CODIV-19._
 
 ## As a citizen
 You can:
 
 * know how many people are in a place at now
 * display the diagram of presences in a given place in the past
-* know if you have met people infected by COVID-19
+* in some cases, know if you could have had a contact with a person infected by COVID-19
 
-without giving any personal information, and with no GPS tracing.
+without giving any personal information, and without GPS tracing.
 
 Put a look at the [FAQ](http://crowded.zone/faq.php) to learn how to do that.
 
@@ -62,9 +62,9 @@ First to be said, [Crowded Zone](http://crowded.zone/) is a production applicati
 
 * run crowdedzone.sql in your MySQL database;
 
-* Get Android Studio, make a new project, and use resources and source files that you find in the app folder of this repository to create your own Android app. At the very minimum, replace crowded.zone with your domain name in Crowded.java, edit the application name in the manifest, and choose a different package name for your sources. Build, sign, and upload to the Google Play Console. Replace [https://play.google.com/store/apps/details?id=zone.crowded.crowded](https://play.google.com/store/apps/details?id=zone.crowded.crowded) with the URL of your own app on the Play Store, in the four PHP pages where it appears (index, trend, faq, credits).
+* Get Android Studio, make a new project, and use resources and source files that you find in the app folder of this repository to create your own Android app. At the very minimum, replace crowded.zone with your domain name in Crowded.java, edit the application name in the manifest, and choose a different package name for your sources. Build, sign, and upload to your Web root. If you have choosen a filename other than crowded.apk for your app, fix the related links in the index, trend, faq, and credits PHP pages.
 
-* OPTIONAL: install your own instance of the Overpass API instead of relying on the Kumi Systems one ([are you sure?](https://wiki.openstreetmap.org/wiki/Overpass_API#Public_Overpass_API_instances)) 
+* OPTIONAL: install your own instance of the Overpass API instead of relying on the Kumi Systems one ([are you sure?](https://wiki.openstreetmap.org/wiki/Overpass_API#Public_Overpass_API_instances)). Start from [here](https://wiki.openstreetmap.org/wiki/Overpass_API/Installation) if you are determined to do that.
 
 ### Functioning
 
@@ -82,11 +82,13 @@ When a user moves to a new location, she taps or clicks in the proximity of her 
 
 * for each of the people that stands in the reached place at the moment in which the new user arrives, a new record is stored in the contacts table. It contains the identifiers of the two users that got in touch, the identifier of the place, and the timestamp. At the same time, any contact record older than 14 days is permanently deleted. 
 
-Contacts are useful for identifying those users that have had a contact with an infected people. Here is how it is done:
+Contacts older than 14 days are deleted automatically by the system.
 
-* the public authority fills the table of infected people indicating their unique identifiers, and the date and time when they have been found infected. The identifier of the infected person is found displaying  the [main map](http://crowded.zone/index.php) of the application from her device, and looking at the top left corner of the screen.
+In the case in which a public authority would decide to use this app as one of the tools to fight the COVID-19, contact records allow to identify and notify those users who could have had a contact with an infected person. Here is how it is done:
 
-* Every time that a user loads the [main map](http://crowded.zone/index.php), the system checks to see if she has had a contact with an infected person, using the table of contacts, and the table of infected people, as described above. If yes, the COVID-19 bar is overimpressed at the top of the [main map](http://crowded.zone/index.php). Tapping or clicking on it, the user displays the dates and times of contact. Tapping or clicking one of them, the user displays the place. Then, it is expected that the user communicates to the health authorities of her country that she has had a contact with an infected person.
+* the public authority fills the table of infected people indicating their numeric identifiers, and the date and time when they have been found infected. The identifier of the infected person is found displaying  the [main map](http://crowded.zone/index.php) of the application from her device, and looking at the top left corner of the screen.
+
+* Every time that a user loads the [main map](http://crowded.zone/index.php), the system checks to see if she has had a contact with an infected person, using the table of contacts, and the table of infected people, as described above. If yes, the COVID-19 bar is overimpressed at the top of the [main map](http://crowded.zone/index.php). Tapping or clicking on it, the user displays the dates and times of contact. Tapping or clicking one of them, the user displays the place. Then, it is expected that the user communicates to the health authorities of her country that she has could have had a contact with an infected person.
 
 A shortcut is available to speed up the communication of movements. It is the star at the top left corner of the [main map](http://crowded.zone/index.php). Tapping or clicking on it, recently visited places are listed. Tapping or clicking one of them, the movement is performed, without the need of locating the place on the map and perfoming the search and confirm steps. Recent places are stored locally in the user device, and only there. 
 
@@ -104,8 +106,8 @@ Every single writing that is displayed to the user by this application is transl
 
 ### App
 
-The Android app is the simplest possible. It just opens a Web browser and loads [http://crowded.zone/](http://crowded.zone).
+The Android app is the simplest possible. It just opens a Web browser and loads [http://crowded.zone/](http://crowded.zone), without opening a new tab if the application is already opened in the browser.
 
 ## Contacts
 
-Join the Telegram channel and discussion group, or write me at <mirco.soderi@gmail.com>. 
+Join the [Telegram channel](https://t.me/crowdedapp) and discussion group, or write me at <mirco.soderi@gmail.com>. 

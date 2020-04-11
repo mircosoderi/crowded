@@ -60,7 +60,7 @@ if (defined("CRYPT_BLOWFISH") && CRYPT_BLOWFISH) {
 			<div id="footer"><table><tr>
 				<td style="background-color:white; color:black; padding-left:0px; padding-right:0px;"><a style="background-color:white; color:black; border: thick solid black; width:96.5%;" href="index.php" title="Now"><i class="fas fa-home"></i></a></td>
 				<td><a href="trend.php" title="Trend"><i class="fas fa-chart-line"></i></a></td>			
-				<td><a href="https://play.google.com/store/apps/details?id=zone.crowded.crowded" title="App"><i class="fab fa-google-play"></i></a></td>
+				<td><a href="crowded.apk" title="App"><i class="fab fa-google-play"></i></a></td>
 				<td><a href="faq.php" title="FAQ"><i class="fas fa-question-circle"></i></a></td>		
 				<td><a href="credits.php" title="Credits"><i class="fas fa-user-friends"></i></a></td>
 			</tr></table></div>

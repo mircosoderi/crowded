@@ -85,8 +85,8 @@ if (defined("CRYPT_BLOWFISH") && CRYPT_BLOWFISH) {
 		<div id="intro" class="intro">
 			<?php if(strpos($_SERVER['HTTP_ACCEPT_LANGUAGE'],"it") === 0) { ?>
 			<h1>A cosa serve?</h1>
-			<p>A sapere quante persone ci sono in un posto, quante ce ne sono state in passato, e se hai condiviso spazi con persone contagiate.</p>
-			<h1>Come fa a saperlo?</h1>
+			<p>A sapere quante persone ci sono in un posto e quante ce ne sono state in passato. Potrebbe anche aiutare a contrastare il CODIV-19.</p>
+			<h1>Come fa a sapere il numero delle persone?</h1>
 			<p>Sono le persone ad indicare dove si trovano, o dove stanno per andare. Non usa il GPS.</p>
 			<h1>Ma se dico dove sono, lo sanno tutti lo stesso!</h1>
 			<p>Sei identificato attraverso un numero. Gli altri utenti neppure lo vedono. L'amministratore s&igrave;, ma &egrave; un numero.</p>
@@ -97,29 +97,33 @@ if (defined("CRYPT_BLOWFISH") && CRYPT_BLOWFISH) {
 			<h1>Come indico dove mi trovo?</h1>
 			<p>Apri la <a href="index.php" title="Now">mappa principale <i class="fas fa-home"></i></a>, premi o clicca sul luogo dove ti trovi (o dove stai andando), e scegli il nome dalla lista.</p>	
 			<h1>Perch&eacute; non lo trova? Eppure ho premuto proprio nel mezzo!</h1>
-			<p>Prova sul bordo, vedrai che lo trova.</p>
+			<p>Prova a spostarti pi&ugrave; verso il bordo, spesso funziona.</p>
 			<h1>Cosa succede se dimentico il mio omino in un posto?</h1>
 			<p>Dopo un giorno che &egrave; l&igrave; sbianca, e non viene pi&ugrave; contato.</p>
 			<h1>Come vedo quante persone ci sono in un posto in questo momento?</h1>
 			<p>Clicca o premi sulla <a href="index.php" title="Now">mappa principale <i class="fas fa-home"></i></a>, apparirà una lista dei luoghi nelle vicinanze, ognuno con il numero di persone.</p>
 			<h1>Posso sapere quante persone erano in un posto ieri?</h1>
 			<p>S&igrave;, vai sulla <a href="trend.php" title="Trend">mappa dei trend <i class="fas fa-chart-line"></i></a>, e clicca o premi sul posto che ti interessa.</p>
-			<h1>Come so se sono stato a contatto con persone contagiate?</h1>
-			<p>Sulla <a href="index.php" title="Now">mappa principale <i class="fas fa-home"></i></a> appare una barra con scritto COVID-19. Premendola vedi giorno e orario. Premendo ancora vedi il luogo.</p>
+			<h1>Come so se potrei aver avuto un contatto con una persona contagiata?</h1>
+			<p>Sulla <a href="index.php" title="Now">mappa principale <i class="fas fa-home"></i></a> appare una barra con scritto COVID-19. Interagendo con essa vedi luoghi e orari.</p>
 			<h1>Come fa a saperlo?</h1>
-			<p>Il sistema registra i contatti tra persone (numeri), con luogo e orario. Se un'autorit&agrave; immette i codici numerici degli infetti, il sistema fa le sue deduzioni.</p>
+			<p>Quando sposti il tuo segnaposto in un luogo, il sistema associa il tuo codice numerico a quello degli altri che si trovano l&igrave;.</p>
+			<h1>E quindi?</h1>
+			<p>Se una pubblica autorit&agrave; immette a sistema i codici numerici dei contagiati, il sistema li incrocia con quelli dei contatti che gli utenti hanno avuto.</p>
 			<h1>Qual'&egrave; il mio codice?</h1>
-			<p>Guarda in alto a sinistra nella <a href="index.php" title="Now">mappa principale <i class="fas fa-home"></i></a>. &Egrave; scritto in verticale.</p>
+			<p>Si trova in alto a sinistra nella <a href="index.php" title="Now">mappa principale <i class="fas fa-home"></i></a>.</p>
 			<h1>Che app leggera! Ma cosa fa?</h1>
-			<p>Apre la <a href="index.php" title="Now">mappa principale <i class="fas fa-home"></i></a> nel browser, evitando di aprire altri tab se &egrave; gi&agrave; aperta in uno. Tutto qui.</p>
+			<p>Apre la <a href="index.php" title="Now">mappa principale <i class="fas fa-home"></i></a> nel browser, evitando di aprire altri tab se &egrave; gi&agrave; aperta in uno. Tutto qui.</p>			
 			<h1>OK ma se volessi sapere...</h1>
 			<p>Unisciti al <a href="https://t.me/crowdedapp" title="Crowded Telegram">canale Telegram</a>. C'&egrave; anche un gruppo di discussione.</p>
 			<h1>Ma io non ho Telegram!</h1>
 			<p>Male. Molto male. Va bene via, puoi scrivere a <a href="mailto:mirco.soderi@gmail.com" title="Mirco Soderi">questa</a> e-mail.</p>
+			<h1>Posso fare un'applicazione uguale a questa per la mia citt&agrave;?</h1>
+			<p>Certo che s&igrave;. <a href="https://github.com/mircosoderi/crowded" title="GitHub">Inizia da qui</a>. Se ti trovi in difficolt&agrave; dimmelo che ti aiuto.</p>
 			<?php } else { ?>
 			<script>document.write(t(`<h1>What purpose does it serve?</h1>
-			<p>To know how many people are in one place at now, how many have been there in the past, and if you have shared spaces with infected people.</p>
-			<h1>How does it know?</h1>
+			<p>To know how many people are in one place at now and how many have been there in the past. It also could help countering the spread of CODIV-19.</p>
+			<h1>How does it know the number of people?</h1>
 			<p>They are the people who indicate where they are, or where they are going. It does not use GPS.</p>
 			<h1>But if I say where I am, everyone knows it all the same.</h1>
 			<p>You are identified by a number. Users don't see it. The admin yes, but it's a number.</p>
@@ -130,31 +134,35 @@ if (defined("CRYPT_BLOWFISH") && CRYPT_BLOWFISH) {
 			<h1>How do I indicate where I am?</h1>
 			<p>Tap or click the main map <a href="index.php" title="Now"><i class="fas fa-home"></i></a> on the place where you are, or where you are going, and pick the place from the list.</p>	
 			<h1>Why can't it find it? Yet I pressed right in the middle!</h1>
-			<p>Here it is, try on the edge.</p>
+			<p>Try moving more to the edge, it often works.</p>
 			<h1>What if I forget my marker in a place?</h1>
 			<p>After a day that it is still, it bleaches, and it is no longer counted.</p>
 			<h1>How do I see how many people are in one place?</h1>
 			<p>Clicking on the <a href="index.php" title="Now">main map<i class="fas fa-home"></i></a>, a list of places in the surrounding area appears, each with the number of people.</p>
 			<h1>Can I know how many people were in a place yesterday?</h1>
 			<p>In the <a href="trend.php" title="Trend">map of trends <i class="fas fa-chart-line"></i></a>, click or tap on the place, and pick it from the list. An interactive diagram will display.</p>
-			<h1>How do I know if I have been in contact with infected people?</h1>
-			<p>A bar appears in the <a href="index.php" title="Now">main map <i class="fas fa-home"></i></a> with COVID-19 written. Push on it to see day and time. Push again to see where.</p>
+			<h1>How do I know if I might have had contact with an infected person?</h1>
+			<p>A bar appears in the <a href="index.php" title="Now">main map <i class="fas fa-home"></i></a> with COVID-19 written. Interacting with it you see places and times.</p>
 			<h1>How does it know?</h1>
-			<p>The system records contacts between people (numbers), with place and time. If an authority enters the numeric codes of infected people, the system makes its deductions.</p>
+			<p>When you move your placemark to a place, the system associates your numeric code with that of the others who are there.</p>
+			<h1>And then?</h1>
+			<p>If a public authority enters the numeric codes of the infected persons into the system, the system crosses them with those of the contacts that the users have had.</p>
 			<h1>What is my code?</h1>
-			<p>Look at the top left of the <a href="index.php" title="Now">main map <i class="fas fa-home"></i></a>. It is written vertically.</p>
+			<p>It locates at the top left of the <a href="index.php" title="Now">main map <i class="fas fa-home"></i></a>.</p>
 			<h1>What a light app! What does it do?</h1>
 			<p>It simply opens the <a href="index.php" title="Now">main map<i class="fas fa-home"></i></a> in your browser, avoiding to open new tabs if the map is already loaded in one of them. Nothing more.</p>
 			<h1>Okay, but if I wanted to know...</h1>
 			<p>Join the <a href="https://t.me/crowdedapp" title="Crowded Telegram">Telegram channel</a>, and its related discussion group.</p>
 			<h1>But I don't have Telegram!</h1>
-			<p>What a bad thing. Okay away, you can write to <a href="mailto:mirco.soderi@gmail.com" title="Mirco Soderi">this</a> e-mail.</p>`));</script>
+			<p>What a bad thing. Okay away, you can write to <a href="mailto:mirco.soderi@gmail.com" title="Mirco Soderi">this</a> e-mail.</p>
+			<h1>Can I make an application like this for my city??</h1>
+			<p>Of course yes. <a href="https://github.com/mircosoderi/crowded" title="GitHub">Start from here</a>. If you get stuck tell me that. I will be glad to help you.</p>`));</script>
 			<?php } ?>
 		</div>
 		<div id="footer"><table><tr>
 			<td><a href="index.php" title="Now"><i class="fas fa-home"></i></a></td>
 			<td><a href="trend.php" title="Trend"><i class="fas fa-chart-line"></i></a></td>			
-			<td><a href="https://play.google.com/store/apps/details?id=zone.crowded.crowded" title="App"><i class="fab fa-google-play"></i></a></td>
+			<td><a href="crowded.apk" title="App"><i class="fab fa-google-play"></i></a></td>
 			<td style="background-color:white; color:black; padding-left:0px; padding-right:0px;"><a style="background-color:white; color:black; border: thick solid black; width:96.5%;" href="faq.php" title="FAQ"><i class="fas fa-question-circle"></i></a></td>		
 			<td><a href="credits.php" title="Credits"><i class="fas fa-user-friends"></i></a></td>
 		</tr></table></div>
