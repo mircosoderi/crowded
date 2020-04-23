@@ -108,6 +108,10 @@ Every single writing that is displayed to the user by this application is transl
 
 The Android app is the simplest possible. It just opens a Web browser and loads [http://crowded.zone/](http://crowded.zone), without opening a new tab if the application is already opened in the browser.
 
+## See also
+
+[COVID-19: how can we help?](https://webgol.dinfo.unifi.it/covid-19-how-can-we-help/)
+
 ## Contacts
 
 Join the [Telegram channel](https://t.me/crowdedapp) and discussion group, or write me at <mirco.soderi@gmail.com>. 
